@@ -25,9 +25,6 @@ a {
 }
 
 
-/* --- reset end --- */
-
-
 /* --- typography--- */
 
 body {
@@ -56,9 +53,6 @@ h3 {
 p {
     margin: 1rem 0;
 }
-
-
-/* --- typography end --- */
 
 
 /* --- layout--- */
@@ -162,9 +156,6 @@ nav li:hover {
 }
 
 
-/* header end */
-
-
 /* main */
 
 main {
@@ -251,9 +242,6 @@ main {
 }
 
 
-/* --- main-end --- */
-
-
 /* --- footer --- */
 
 footer {
@@ -331,15 +319,6 @@ footer a:hover {
     cursor: default;
 }
 
-
-/* --- footer end --- */
-
-
-/* --- media queries --- */
-
-
-/* -- first re-sizing --*/
-
 @media screen and (max-width: 1401px) {
     .search-bar,
     nav div,
@@ -373,9 +352,6 @@ footer a:hover {
     }
 }
 
-
-/* -- second re-sizing --*/
-
 @media screen and (max-width: 1100px) {
     .search-bar,
     nav div,
@@ -406,9 +382,6 @@ footer a:hover {
         width: 25%;
     }
 }
-
-
-/* third re-sizing */
 
 @media screen and (max-width: 820px) {
     /* header */
@@ -463,9 +436,6 @@ footer a:hover {
     }
 }
 
-
-/* last re-sizing */
-
 @media screen and (max-width: 600px) {
     /* header */
     .logo {
@@ -517,9 +487,6 @@ footer a:hover {
         line-height: 5rem;
     }
 }
-
-
-/* media queries end */
 
 
 /* ~~~done~~~ */
