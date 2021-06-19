@@ -12,40 +12,31 @@ var menu = document.getElementById("menu");
 
 
 // Container containers 
-var homeContainer = document.getElementById("homeContainer");
-var aboutContainer = document.getElementById("aboutContainer");
-var contactContainer = document.getElementById("contactContainer");
-var orderContainer = document.getElementById("orderContainer");
+var homeContainer = document.getElementById("home");
+var aboutContainer = document.getElementById("about");
+var contactContainer = document.getElementById("contact");
+var orderContainer = document.getElementById("order");
 
 // events 
 
-homeBtn.addEventListener("click", function() {
-    homeContainer.classList.add("visible-container");
-    aboutContainer.classList.remove("visible-container");
-    contactContainer.classList.remove("visible-container");
-    orderContainer.classList.remove("visible-container");
-});
+let navButtons = document.querySelectorAll(".navButton");
+let contentContainers = document.querySelectorAll(".container");
 
-aboutBtn.addEventListener("click", function() {
-    aboutContainer.classList.add("visible-container");
-    homeContainer.classList.remove("visible-container");
-    contactContainer.classList.remove("visible-container");
-    orderContainer.classList.remove("visible-container");
-});
-
-contactbtn.addEventListener("click", function() {
-    contactContainer.classList.add("visible-container");
-    homeContainer.classList.remove("visible-container");
-    aboutContainer.classList.remove("visible-container");
-    orderContainer.classList.remove("visible-container");
-});
-
-orderBtn.addEventListener("click", function() {
-    orderContainer.classList.add("visible-container");
-    homeContainer.classList.remove("visible-container");
-    aboutContainer.classList.remove("visible-container");
-    contactContainer.classList.remove("visible-container");
-});
+navButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
+        // this line will return the data attribute which contains a name describing what is this button related to and thus what it should show;
+        let target = e.explicitOriginalTarget.firstChild.data.toLowerCase();
+        contentContainers.forEach(container => {
+            if (container.id === target) {
+                if (!container.classList.contains("visible-container")) {
+                    container.classList.add("visible-container");
+                }
+            } else {
+                container.classList.remove("visible-container");
+            }
+        })
+    })
+})
 
 // on-mobile events 
 
