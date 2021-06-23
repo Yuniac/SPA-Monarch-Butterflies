@@ -2,7 +2,7 @@
 var homeBtn = document.getElementById("home");
 var aboutBtn = document.getElementById("about");
 var contactbtn = document.getElementById("contact");
-var orderBtn = document.getElementById("order");
+var galleryBtn = document.getElementById("gallery");
 
 // on-mobile nav button and menu
 var openMenuBtn = document.getElementById("openMenuBtn");
@@ -15,7 +15,7 @@ var menu = document.getElementById("menu");
 var homeContainer = document.getElementById("home");
 var aboutContainer = document.getElementById("about");
 var contactContainer = document.getElementById("contact");
-var orderContainer = document.getElementById("order");
+var galleryContainer = document.getElementById("gallery");
 
 // events 
 
@@ -63,15 +63,10 @@ document.addEventListener("contextmenu", e => {
     let windowXLimit = window.innerWidth;
     let windowYLimit = window.innerHeight;
 
-    // console.log(windowXLimit)
-    // console.log(windowYLimit);
-
     // get where the mouse is clicking;
     let cX = Math.round(e.clientX);
     let cY = Math.round(e.clientY);
 
-    console.log(e.clientX)
-    console.log(e.clientY);
 
     // Safe area for default menu behaviour;
     let sX = windowXLimit - cmWidth;
