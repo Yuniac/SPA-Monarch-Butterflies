@@ -1,7 +1,7 @@
 // nav buttons 
 var homeBtn = document.getElementById("home");
 var aboutBtn = document.getElementById("about");
-var contactbtn = document.getElementById("contact");
+var Sanctuariesbtn = document.getElementById("Sanctuaries");
 var galleryBtn = document.getElementById("gallery");
 
 // on-mobile nav button and menu
@@ -14,29 +14,36 @@ var menu = document.getElementById("menu");
 // Container containers 
 var homeContainer = document.getElementById("home");
 var aboutContainer = document.getElementById("about");
-var contactContainer = document.getElementById("contact");
+var SanctuariesContainer = document.getElementById("Sanctuaries");
 var galleryContainer = document.getElementById("gallery");
 
 // events 
 
 let navButtons = document.querySelectorAll(".navButton");
+let contextMenuOptions = document.querySelectorAll(".context-menu-options");
 let contentContainers = document.querySelectorAll(".container");
 
 navButtons.forEach(button => {
-    button.addEventListener("click", (e) => {
-        // this line will return the data attribute which contains a name describing what is this button related to and thus what it should show;
-        let target = e.explicitOriginalTarget.firstChild.data.toLowerCase();
-        contentContainers.forEach(container => {
-            if (container.id === target) {
-                if (!container.classList.contains("visible-container")) {
-                    container.classList.add("visible-container");
-                }
-            } else {
-                container.classList.remove("visible-container");
-            }
-        })
-    })
+    button.addEventListener("click", showContent)
 })
+contextMenuOptions.forEach(option => {
+    option.addEventListener("click", showContent)
+})
+
+function showContent(e) {
+    // this line will return the data attribute which contains a name describing what is this button related to and thus what it should show;
+    let target = e.explicitOriginalTarget.firstChild.data.toLowerCase();
+    contentContainers.forEach(container => {
+        if (container.id === target) {
+            if (!container.classList.contains("visible-container")) {
+                container.classList.add("visible-container");
+            }
+        } else {
+            container.classList.remove("visible-container");
+        }
+    })
+}
+
 
 // on-mobile events 
 
@@ -91,9 +98,9 @@ document.addEventListener("click", () => {
     cm.style.display = "none";
 });
 
-// Stop the clicking event on our menu;
+// our menu has a purpose now (other than just existing), upon clicking on an option in it, the content will be changed and the menu will hide itself;
 cm.addEventListener("click", e => {
-    e.stopPropagation()
+    cm.style.display = "none";
 });
 
 // Stop the right click event too;
