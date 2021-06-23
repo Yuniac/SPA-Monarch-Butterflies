@@ -108,3 +108,21 @@ cm.addEventListener("contextmenu", e => {
     e.preventDefault()
     e.stopPropagation()
 });
+
+// 
+
+const allLinksInThePage = document.querySelectorAll("a");
+allLinksInThePage.forEach(a => {
+    a.addEventListener("dragstart", (e) => {
+        e.preventDefault();
+        return false;
+    })
+})
+
+const allImagesInThePage = document.querySelectorAll("img");
+allImagesInThePage.forEach(img => {
+    img.addEventListener("dragstart", (e) => {
+        e.preventDefault();
+        return false;
+    })
+})
