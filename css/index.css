@@ -59,7 +59,7 @@ a {
 }
 
 .context-menu li a:hover {
-    background-color: #ccc;
+    background-color: #009052;
 }
 
 
@@ -191,7 +191,7 @@ nav li:last-of-type {
 }
 
 nav li:hover {
-    background-color: #ccc;
+    background-color: #009052;
 }
 
 
@@ -220,12 +220,12 @@ main {
 }
 
 .home a,
-.contact a {
+.sanctuaries a {
     color: #01a1ff;
 }
 
 .home a:hover,
-.contact a:hover {
+.sanctuaries a:hover {
     color: #3eb6fc;
     text-decoration: underline;
 }
@@ -296,6 +296,7 @@ main {
     height: 100%;
     transition: .4s all cubic-bezier(0.075, 0.82, 0.165, 1);
     transform-origin: center;
+    cursor: pointer;
 }
 
 .gallery-item img:hover {
