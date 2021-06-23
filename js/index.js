@@ -60,3 +60,58 @@ closeMenuBtn.addEventListener("click", function() {
     openMenuBtn.style.display = "block";
     closeMenuBtn.style.display = "none";
 })
+
+// custom right click (context-menu) credits go to PW-learning (https://github.com/PW-learning);
+let cm = document.querySelector("#context-menu")
+let = cmWidth = 180;
+let = cmHeight = 240;
+
+document.addEventListener("contextmenu", e => {
+    e.preventDefault();
+    // get the browser's window width;
+    let windowXLimit = window.innerWidth;
+    let windowYLimit = window.innerHeight;
+
+    // console.log(windowXLimit)
+    // console.log(windowYLimit);
+
+    // get where the mouse is clicking;
+    let cX = Math.round(e.clientX);
+    let cY = Math.round(e.clientY);
+
+    console.log(e.clientX)
+    console.log(e.clientY);
+
+    // Safe area for default menu behaviour;
+    let sX = windowXLimit - cmWidth;
+    let sY = windowYLimit - cmHeight;
+
+    // // logic to prevent the menu from overflowing;
+    if (cX > sX) {
+        cX = cX - cmWidth // we are clicking out of safe area X
+    }
+    if (cY > sY) {
+        cY = cY - cmHeight // we are clicking out of safe area Y
+    }
+
+    // Show our menu
+    cm.style.left = cX + "px"
+    cm.style.top = cY + "px"
+    cm.style.display = "block"
+});
+
+// Hide the menu when clicking outside of it;
+document.addEventListener("click", () => {
+    cm.style.display = "none";
+});
+
+// Stop the clicking event on our menu;
+cm.addEventListener("click", e => {
+    e.stopPropagation()
+});
+
+// Stop the right click event too;
+cm.addEventListener("contextmenu", e => {
+    e.preventDefault()
+    e.stopPropagation()
+});
